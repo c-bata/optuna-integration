@@ -30,6 +30,7 @@ _doc = """Callback for XGBoost to prune unpromising trials.
         trial:
             A :class:`~optuna.trial.Trial` corresponding to the current evaluation of the
             objective function.
+
         observation_key:
             An evaluation metric for pruning, e.g., ``validation-error`` and
             ``validation-merror``. When using the Scikit-Learn API, the index number of
