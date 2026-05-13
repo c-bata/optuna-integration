@@ -36,7 +36,6 @@ jobs:
       skorch: ${{ steps.changes.outputs.skorch }}
       tensorboard: ${{ steps.changes.outputs.tensorboard }}
       tfkeras: ${{ steps.changes.outputs.tfkeras }}
-      wandb: ${{ steps.changes.outputs.wandb }}
       xgboost: ${{ steps.changes.outputs.xgboost }}
       trackio: ${{ steps.changes.outputs.trackio }}
     steps:
@@ -193,14 +192,6 @@ jobs:
     uses: ./.github/workflows/checks_template.yml
     with:
       integration_name: 'tfkeras'
-      deprecated: false
-
-  wandb:
-    if: needs.changes.outputs.wandb == 'true'
-    needs: changes
-    uses: ./.github/workflows/checks_template.yml
-    with:
-      integration_name: 'wandb'
       deprecated: false
 
   xgboost:
